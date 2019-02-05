@@ -1,0 +1,306 @@
+body {
+	font-family: 'Helvetica', sans-serif;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+.interface {
+	
+	color: #333333;
+	background-color: #eeeeee;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	z-index: 1;
+	transition: .5s background-color;
+}
+.interface_anim {
+	animation: 1s slidePanel forwards ease;
+}
+.credit_xl {
+	padding-top: 15px;
+	margin: 0 25px;
+}
+a,
+a:active,
+a:visited {
+	color: #333;
+}
+.option {
+	margin: 50px auto;
+	text-align: center;
+	width: 200px;
+
+}
+.example {
+	width: 30vw;
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #333333;
+	z-index: 0;
+	transition: .5s background-color;
+}
+.example p {
+	line-height: 1.5;
+	margin: 25px auto;
+	max-width: 360px;
+	width: 75%;
+}
+.example h3 {
+
+	font-size: 24px;
+	
+	margin: 20vh 10px 50px;
+}
+
+
+.container {
+	padding-top: 20vh;
+	width: 70%;
+	margin: 0 auto;
+}
+.final {
+	margin-top: 20px;
+	text-align: center;
+}
+.window {
+	width: 350px;
+	height: 85px;
+	overflow-y: hidden;
+	margin: 0 auto;
+}
+.desc {
+	transition: opacity .5s 2s;
+	opacity: 0;
+}
+h1 {
+
+	text-align: center;
+	font-size: 42px;
+	margin: 0;
+	display: block;
+
+}
+h1.statusFinal {
+	text-align: center;
+	/*margin: 0 auto;*/
+	font-size: 70px;
+	transform: translateY(80px);
+	
+}
+.statusFinal_anim {
+	animation: 1s 1.5s statusFinalIn forwards ease;
+}
+
+h1.ratio {
+	text-align: center;
+	margin: 0 auto;
+	transform: translateY(-70px);
+	line-height: 80px;
+	
+}
+.ratio_anim {
+	animation: 1s 1.5s ratioIn forwards ease;
+}
+.divider {
+	margin: 0 auto;
+	width: 0;
+	height: 2px;
+	background-color: #333;
+	
+}
+.divider_anim {
+	animation: 1s 1s dividerIn forwards ease;
+}
+h2 {
+	margin: 0;
+	text-align: center;
+}
+h3 {
+	text-align: center;
+}
+.status {
+	font-size: 24px;
+	right: 10px;
+	color: #333333;
+	opacity: 0;
+	
+	
+}
+.status_anim {
+	animation: 1s 1s statusIn forwards;
+}
+.header {
+	position: absolute;
+	
+	top: 20vh;
+}
+.body {
+	top: 50vh;
+	
+	position: absolute;
+}
+.fa-exchange-alt {
+	transform: rotateZ(90deg);
+}
+.example_mobile {
+	display: none;
+}
+.mobile_container {
+	display: none;
+}
+label {
+	text-align: left;
+	display: block;
+	font-size: 14px;
+
+}
+input {
+	display: block;
+	/*margin: 50px auto;*/
+	margin: 0 auto;
+	width: 200px;
+	font-size: 24px;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #333;
+	outline: none;
+	background-color: transparent;
+
+}
+
+button {
+	-webkit-appearance: none;
+    cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	font-size: 20px;
+	border-radius: 100%;
+	border: 1px solid;
+	border-color: inherit;
+	color: inherit;
+	background: none;
+	height: 50px;
+	padding: 0;
+	
+	width: 50px;
+	line-height: 46px;
+}
+
+
+@keyframes slidePanel {
+	from {
+		width: 100vw;
+	}
+	to {
+		width: 70vw;
+	}
+}
+@keyframes dividerIn {
+	from {
+		width: 0;
+	}
+	to {
+		width: 200px;
+	}
+}
+@keyframes statusFinalIn {
+	from {
+		transform: translateY(70px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes ratioIn {
+	from {
+		transform: translateY(-70px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes statusIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+	body {
+		overflow-y: visible;
+	}
+	.interface {
+		height: 100%;
+		animation: none;
+		
+	}
+	.container {
+		padding-top: 20vh;
+	}
+	.example {
+		display: none;
+	}
+	.window {
+		width: 50vw;
+	}
+	.status {
+		display: none !important;
+	}
+	.example_mobile {
+		display: block;
+		text-align: center;
+		border: 1px solid #333;
+		width: 80vw;
+		margin: 10vh auto 0;
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+	.example_mobile_anim {
+		animation: 1s mobileExampleIn forwards;
+	}
+	.mobile_container {
+		margin: 30px auto;
+		width: 75vw;
+		text-align: center;
+		display: block;
+
+	}
+	.credit_xl {
+		display: none;
+	}
+	.desc {
+		min-height: 40px;
+	}
+}
+@keyframes mobileExampleIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
